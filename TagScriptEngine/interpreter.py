@@ -98,11 +98,11 @@ class Interpreter(object):
             acceptors : List[Block] = [b for b in self.blocks if b.will_accept(ctx)]
             for b in acceptors:
                 value = b.process(ctx)
-                if value != None: # Value found? We're done here.
+                if value is not None: # Value found? We're done here.
                     n.output = value
                     break
 
-            if n.output == None:
+            if n.output is None:
                 continue # If there was no value output, no need to text deform.
 
             if(charlimit is not None):
@@ -150,7 +150,7 @@ class Interpreter(object):
         output = self.solve(message_input, node_ordered_list, response, charlimit)
 
         # Dont override an overridden response.
-        if response.body == None:
+        if response.body is None:
             response.body = output.strip("\n ")
         else:
             response.body = response.body.strip("\n ")

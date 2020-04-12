@@ -9,7 +9,7 @@ class Verb(object):
         self.declaration : Optional[str] = None
         self.parameter : Optional[str] = None
         self.payload : Optional[str] = None
-        if verb_string == None:
+        if verb_string is None:
             return
        
         parsed_string = verb_string[1:-1]
@@ -50,11 +50,11 @@ class Verb(object):
     def __str__(self):
         """This makes Verb compatible with str(x)"""
         response = "{"
-        if self.declaration != None:
+        if self.declaration is not None:
             response += self.declaration
-        if self.parameter != None:
+        if self.parameter is not None:
             response += "("+self.parameter+")"
-        if self.payload != None:
+        if self.payload is not None:
             response += ":"+self.payload
         return response + "}"
 

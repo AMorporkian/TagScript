@@ -11,6 +11,6 @@ class BreakBlock(Block):
 
     def process(self, ctx : Interpreter.Context) -> Optional[str]:
         if helper_parse_if(ctx.verb.parameter) == True:
-            ctx.response.body = ctx.verb.payload if ctx.verb.payload != None else ""
+            ctx.response.body = ctx.verb.payload if ctx.verb.payload is not None else ""
         return ""
 

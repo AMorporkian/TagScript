@@ -20,7 +20,7 @@ class RangeBlock(Block):
                 # base = random.randint(lower, upper)
                 # if base == upper:
                 #     return str(base)
-                # if ctx.verb.parameter != None:
+                # if ctx.verb.parameter is not None:
                 #     random.seed(ctx.verb.parameter+"float")
                 # else:
                 #     random.seed(None)
